@@ -1,0 +1,32 @@
+{% extends 'main/base.html' %}
+{% block body %}
+{% load static %}
+
+<title>Contact Us</title>
+<body>
+    <div>
+        <h2 class="title text-center">Get In Touch</h2>
+        <form method="post">
+            {% csrf_token %}
+            <p>
+                <input type="text" name="name" placeholder="Username" style="width: 500px;">
+            
+            </p>
+                <input type="text" name="email"  placeholder="Email" style="width: 500px;">
+            </p>
+                <input type="text" name="phone"  placeholder="Phone" style="width: 500px;">
+            </p>
+                <textarea name="message" placeholder="Review"  cols="66" rows="20"></textarea>
+            </p>
+            
+            <span>{{ error }}</span>
+
+            <button type="submit" style="width: 300px;">Send</button>
+
+
+        </form>
+    </div>
+    
+
+	
+{% endblock %}

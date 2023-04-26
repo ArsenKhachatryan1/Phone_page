@@ -1,0 +1,20 @@
+{% extends 'main/base.html' %}
+{% block body %}
+    <div>
+        {% for i in phone_list %}
+                <h4><a href="{% url 'index_detail' i.id %}">{{ i.name }} </h4></a>
+                <h3>{{ i.price }} դրամ</h3>
+                <h3>{{ i.about }}</h3>
+                <a href="{% url 'index_detail' i.id %}"><img src="{{ i.img.url }}" width="400px" alt=""></a>
+                <p>
+                {% if user.is_authenticated and user.is_staff %}   
+                <a href="{% url 'update_detail' i.id %}"><button>Update</button></a>
+                <a href="{% url 'delete_detail' i.id %}"><button>Delete</button></a>
+                </p>
+                {% endif %}
+                <hr>
+        {% endfor %}
+        
+    </div>
+
+{% endblock %}

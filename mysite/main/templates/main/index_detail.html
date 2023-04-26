@@ -1,0 +1,30 @@
+{% extends 'main/base.html' %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Phone</title>
+</head>
+
+
+<body>
+    {% if one_phone.check_1 %}
+        <h2>{{ one_phone.name }} - Առկա է</h2>
+        <img src="{{ one_phone.img.url }}" width="550px" alt="">
+        <h3>{{ one_phone.price }} դրամ</h3>
+        <h3>{{ one_phone.about }}</h3>
+    {% else %}
+        <h2>{{ one_phone.name }} - Առկա չէ</h2>
+        <img src="{{ one_phone.img.url }}" width="550px" alt="">
+        <h3>{{ one_phone.price }} դրամ</h3>
+        <h3>{{ one_phone.about }}</h3>
+    {% endif %}
+    
+
+
+</body>
+</html>
+{% endblock %}
